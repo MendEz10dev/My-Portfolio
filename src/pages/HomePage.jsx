@@ -99,7 +99,7 @@ export function HomePage() {
                             <motion.img
                                 src="src/assets/foto-alian.jpg" 
                                 alt="Alián Torres - Desarrollador Frontend"
-                                className="w-full h-full object-cover rounded-full border-4 border-yellow-300/20 shadow-2xl"
+                                className="w-full h-full object-cover rounded-full border-4 border-yellow-300/20 shadow-2xl z-10 hover:scale-105 transition-transform"
                                 whileHover={{ scale: 1.05 }}
                                 transition={{ type: "spring", stiffness: 300 }}
                             />
@@ -158,7 +158,7 @@ export function HomePage() {
         {/* Foto en círculo */}
         <div className="flex-1 flex justify-center">
             <motion.div 
-            className="relative w-64 h-64 md:w-80 md:h-80"
+            className="relative w-48 h-48 md:w-64 md:h-64"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -177,7 +177,6 @@ export function HomePage() {
                 />
             </div>
             </motion.div>
-            
         </div>
 
         {/* Texto de presentación */}
