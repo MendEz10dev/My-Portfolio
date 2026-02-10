@@ -1,0 +1,14 @@
+@import 'tailwindcss';
+
+@theme {
+    /*Colores*/
+    /*Aqui puedo designar mis propios estilos ya sean colores o breakpoints entre otras mas cosas*/
+    
+    /*Aqui digo que voy a crear un color que se va a llamar primary y va tener tal valor: #09f (es un azul)*/
+    --color-primary: #09f;
+
+
+    /*Breakpoint*/
+    /*El breakpoint es un punto de referencia para usar en una media query, cuando quiero que cambie algun estilo cuando el tamano es tal valor, y ese valor es el que pongo en el Breakpoint*/
+    --breakpoint-sm: 350px;
+}
