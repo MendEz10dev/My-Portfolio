@@ -97,7 +97,7 @@ export function HomePage() {
                         {/* Contenedor de la foto con efectos */}
                         <div className="absolute inset-4 flex items-center justify-center overflow-hidden rounded-full">
                             <motion.img
-                                src="src/assets/foto-alian.jpg" 
+                                src="src/assets/IMG-20260126-WA0026.jpg" 
                                 alt="Alián Torres - Desarrollador Frontend"
                                 className="w-full h-full object-cover rounded-full border-4 border-yellow-300/20 shadow-2xl z-10 hover:scale-105 transition-transform"
                                 whileHover={{ scale: 1.05 }}
@@ -182,7 +182,7 @@ export function HomePage() {
             {/* Círculos de habilidades */}
             {/* Círculo de Creatividad */}
             <motion.div
-                className="z-10 absolute -top-10 -right-10 w-20 h-20 rounded-full 
+                className="group z-10 absolute -top-10 -right-10 w-20 h-20 rounded-full 
                             bg-white/10 backdrop-blur-md border border-white/30 shadow-lg 
                             flex items-center justify-center text-slate-100 text-sm font-semibold
                             cursor-pointer"
@@ -190,35 +190,47 @@ export function HomePage() {
                 whileTap={{ scale: 0.9, rotate: -10, backgroundColor: "rgba(255,255,255,0.3)" }}
                 >
                 Creatividad
+                {/* Tooltip */} 
+                <div className="absolute bottom-full mb-2 px-3 py-1 rounded-lg bg-black/70 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" > 
+                    Capacidad de generar ideas originales e innovadoras. 
+                </div>
             </motion.div>
 
             {/* Círculo de Resolución */}
             <motion.div
-                className="z-10 absolute -bottom-10 left-55 w-20 h-20 rounded-full 
-                            bg-white/10 backdrop-blur-md border border-white/30 shadow-lg 
-                            flex items-center justify-center text-slate-100 text-sm font-semibold
-                            cursor-pointer"
-                whileHover={{ scale: 1.2, rotate: -10, backgroundColor: "rgba(255,255,255,0.2)" }}
-                whileTap={{ scale: 0.9, rotate: 10, backgroundColor: "rgba(255,255,255,0.3)" }}
-                >
-                Resolución
-            </motion.div>
-
-            {/* Círculo de Disciplina */}
-            <motion.div
-                className="z-10 absolute -top-10 right-55 w-20 h-20 rounded-full 
+                className="group z-10 absolute -bottom-10 left-55 w-20 h-20 rounded-full 
                             bg-white/10 backdrop-blur-md border border-white/30 shadow-lg 
                             flex items-center justify-center text-slate-100 text-sm font-semibold
                             cursor-pointer"
                 whileHover={{ scale: 1.2, rotate: 15, backgroundColor: "rgba(255,255,255,0.2)" }}
+                whileTap={{ scale: 0.9, rotate: 10, backgroundColor: "rgba(255,255,255,0.3)" }}
+                >
+                Resolución
+                {/* Tooltip */} 
+                <div className="absolute bottom-full mb-2 px-3 py-1 rounded-lg bg-black/70 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" > 
+                    Habilidad para superar obstáculos con eficacia. 
+                </div>
+            </motion.div>
+
+            {/* Círculo de Disciplina */}
+            <motion.div
+                className="group z-10 absolute -top-10 right-55 w-20 h-20 rounded-full 
+                            bg-white/10 backdrop-blur-md border border-white/30 shadow-lg 
+                            flex items-center justify-center text-slate-100 text-sm font-semibold
+                            cursor-pointer"
+                whileHover={{ scale: 1.2, rotate: -10, backgroundColor: "rgba(255,255,255,0.2)" }}
                 whileTap={{ scale: 0.9, rotate: -15, backgroundColor: "rgba(255,255,255,0.3)" }}
                 >
                 Disciplina
+                {/* Tooltip */} 
+                <div className="absolute bottom-full mb-2 px-3 py-1 rounded-lg bg-black/70 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" > 
+                    Constancia y compromiso para alcanzar metas. 
+                </div>
             </motion.div>
 
             {/* Círculo de Respeto */}
             <motion.div
-                className="z-10 absolute -bottom-10 -left-10 w-20 h-20 rounded-full 
+                className="group z-10 absolute -bottom-10 -left-10 w-20 h-20 rounded-full 
                             bg-white/10 backdrop-blur-md border border-white/30 shadow-lg 
                             flex items-center justify-center text-slate-100 text-sm font-semibold
                             cursor-pointer"
@@ -226,6 +238,10 @@ export function HomePage() {
                 whileTap={{ scale: 0.9, rotate: 15, backgroundColor: "rgba(255,255,255,0.3)" }}
                 >
                 Respeto
+                {/* Tooltip */} 
+                <div className="absolute bottom-full mb-2 px-3 py-1 rounded-lg bg-black/70 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" > 
+                    Valorar y reconocer a los demás con empatía. 
+                </div>
             </motion.div>
 
             {/* Línea hacia Creatividad */}
@@ -278,15 +294,29 @@ export function HomePage() {
 
         {/*Seccion de Habilidades*/}
 
-        <div className="pt-18 flex flex-wrap justify-center gap-4 p-2 bg-gradient-to-br from-teal-200 via-cyan-400 to-blue-400 w-full">
-          {habilidades.map((habilidad, index) => (
-          <Skills 
-            key={index}
-            name={habilidad.name}
-            icon={habilidad.icon}
-            bgColor={habilidad.bgColor}/>
-          ))}
-        </div>
+        {/* Sección Skills */}
+<section
+  id="skills"
+  className="min-h-screen flex flex-col items-center justify-center gap-12 px-6 py-16 bg-gradient-to-br from-yellow-500/80 via-orange-600/70 to-red-600/80"
+>
+  {/* Título */}
+  <h2 className="text-3xl md:text-4xl font-bold text-yellow-200 mb-6 text-center drop-shadow-lg">
+    Mis Habilidades
+  </h2>
+
+  {/* Grid de Skills */}
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 w-full max-w-5xl">
+    {habilidades.map((habilidad, index) => (
+      <Skills
+        key={index}
+        name={habilidad.name}
+        icon={habilidad.icon}
+        bgColor={habilidad.bgColor}
+      />
+    ))}
+  </div>
+</section>
+
         
 
 
