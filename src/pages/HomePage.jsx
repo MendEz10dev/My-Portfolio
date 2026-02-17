@@ -152,49 +152,126 @@ export function HomePage() {
 
         {/* Sección Acerca de mí */}
         <section 
-        id="acerca-de-mi" 
-        className="min-h-screen flex flex-col lg:flex-row items-center justify-center gap-12 px-6 py-16 bg-gradient-to-r from-amber-600/80 via-orange-500/70 to-rose-600/80"
+            id="acerca-de-mi" 
+            className="min-h-screen flex flex-col lg:flex-row items-center justify-center gap-12 px-6 py-16 bg-gradient-to-r from-amber-600/80 via-orange-500/70 to-rose-600/80"
         >
-        {/* Foto en círculo */}
-        <div className="flex-1 flex justify-center">
-            <motion.div 
-            className="relative w-48 h-48 md:w-64 md:h-64"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            >
+            {/* Foto en círculo */}
+            <div className="flex-1 flex justify-center">
+                <motion.div 
+                className="relative w-48 h-48 md:w-64 md:h-64"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+    >
+            {/* Fondo animado */}
             <div className="absolute inset-0 bg-gradient-to-br from-amber-400/20 to-cyan-400/20 rounded-full blur-xl animate-pulse"></div>
             <div className="absolute inset-4 border-2 border-amber-200/30 rounded-full animate-pulse"></div>
             <div className="absolute inset-8 border border-cyan-300/20 rounded-full"></div>
-            
-            <div className="absolute inset-4 flex items-center justify-center overflow-hidden rounded-full">
+
+            {/* Imagen principal */}
+            <div className="z-20 absolute inset-4 flex items-center justify-center overflow-hidden rounded-full">
                 <motion.img
                 src="src/assets/foto-alian.jpg" 
                 alt="Alián Torres - Desarrollador Frontend"
-                className="w-full h-full object-cover rounded-full border-4 border-slate-900/95 shadow-2xl"
+                className="w-full h-full object-cover rounded-full border-4 border-yellow-600/90 shadow-2xl"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
                 />
             </div>
-            </motion.div>
-        </div>
 
-        {/* Texto de presentación */}
-        <div className="flex-1 text-center lg:text-left max-w-xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-amber-300 mb-6">
-            Acerca de mí
-            </h2>
-            <p className="text-lg md:text-xl text-slate-100 leading-relaxed backdrop-blur-sm bg-white/5 rounded-lg p-6">
-            Soy Alián Torres, desarrollador frontend apasionado por crear interfaces 
-            modernas y funcionales. He trabajado con tecnologías como React, 
-            TypeScript y Tailwind CSS, construyendo proyectos que combinan 
-            simplicidad y elegancia.  
-            <br/><br/>
-            Mi motivación es transformar ideas en experiencias digitales que transmitan 
-            armonía y usabilidad, siempre buscando aprender y mejorar en cada línea 
-            de código.
-            </p>
-        </div>
+            {/* Círculos de habilidades */}
+            {/* Círculo de Creatividad */}
+            <motion.div
+                className="z-10 absolute -top-10 -right-10 w-20 h-20 rounded-full 
+                            bg-white/10 backdrop-blur-md border border-white/30 shadow-lg 
+                            flex items-center justify-center text-slate-100 text-sm font-semibold
+                            cursor-pointer"
+                whileHover={{ scale: 1.2, rotate: 10, backgroundColor: "rgba(255,255,255,0.2)" }}
+                whileTap={{ scale: 0.9, rotate: -10, backgroundColor: "rgba(255,255,255,0.3)" }}
+                >
+                Creatividad
+            </motion.div>
+
+            {/* Círculo de Resolución */}
+            <motion.div
+                className="z-10 absolute -bottom-10 left-55 w-20 h-20 rounded-full 
+                            bg-white/10 backdrop-blur-md border border-white/30 shadow-lg 
+                            flex items-center justify-center text-slate-100 text-sm font-semibold
+                            cursor-pointer"
+                whileHover={{ scale: 1.2, rotate: -10, backgroundColor: "rgba(255,255,255,0.2)" }}
+                whileTap={{ scale: 0.9, rotate: 10, backgroundColor: "rgba(255,255,255,0.3)" }}
+                >
+                Resolución
+            </motion.div>
+
+            {/* Círculo de Disciplina */}
+            <motion.div
+                className="z-10 absolute -top-10 right-55 w-20 h-20 rounded-full 
+                            bg-white/10 backdrop-blur-md border border-white/30 shadow-lg 
+                            flex items-center justify-center text-slate-100 text-sm font-semibold
+                            cursor-pointer"
+                whileHover={{ scale: 1.2, rotate: 15, backgroundColor: "rgba(255,255,255,0.2)" }}
+                whileTap={{ scale: 0.9, rotate: -15, backgroundColor: "rgba(255,255,255,0.3)" }}
+                >
+                Disciplina
+            </motion.div>
+
+            {/* Círculo de Respeto */}
+            <motion.div
+                className="z-10 absolute -bottom-10 -left-10 w-20 h-20 rounded-full 
+                            bg-white/10 backdrop-blur-md border border-white/30 shadow-lg 
+                            flex items-center justify-center text-slate-100 text-sm font-semibold
+                            cursor-pointer"
+                whileHover={{ scale: 1.2, rotate: -15, backgroundColor: "rgba(255,255,255,0.2)" }}
+                whileTap={{ scale: 0.9, rotate: 15, backgroundColor: "rgba(255,255,255,0.3)" }}
+                >
+                Respeto
+            </motion.div>
+
+            {/* Línea hacia Creatividad */}
+                <div className="absolute w-0.5 h-24 bg-white/40 
+                    -top-5 right-19  
+                    transform rotate-45 origin-bottom"></div>
+
+                {/* Línea hacia Resolución */}
+                <div className="absolute w-0.5 h-28 bg-white/40 
+                    -bottom-5 left-43 
+                    transform -rotate-45 origin-top"></div>
+
+                {/* Línea hacia Disciplina */}
+                <div className="absolute w-0.5 h-28 bg-white/40 
+                    -top-5 right-43 
+                    transform -rotate-45 origin-bottom"></div>
+
+                {/* Línea hacia Respeto */}
+                <div className="absolute w-0.5 h-24 bg-white/40 
+                    -bottom-5 left-19 
+                    transform rotate-45 origin-top"></div>
+
+            </motion.div>
+
+            </div>
+
+            {/* Texto de presentación */}
+            <div className="flex-1 flex justify-center">
+                <div className="text-center max-w-2xl">
+                    <h2 className="text-3xl md:text-4xl font-bold text-amber-300 mb-6">
+                    Acerca de mí
+                    </h2>
+                    <p className="text-lg md:text-xl text-slate-100 leading-relaxed bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-lg border border-white/20 hover:shadow-2xl transition-all duration-500">
+                    Soy <span className="text-amber-300 font-semibold">Alián Torres</span>, 
+                    desarrollador frontend apasionado por crear interfaces modernas y funcionales. 
+                    Me encanta trabajar con <span className="text-cyan-300">React</span>, 
+                    <span className="text-cyan-300"> TypeScript</span> y 
+                    <span className="text-cyan-300"> Tailwind CSS</span>, 
+                    construyendo proyectos que combinan simplicidad y elegancia.
+                    <br/><br/>
+                    Mi motivación es transformar ideas en experiencias digitales que transmitan 
+                    armonía y usabilidad, siempre buscando aprender y mejorar en cada línea de código.
+                    </p>
+                </div>
+            </div>
+
         </section>
 
 
