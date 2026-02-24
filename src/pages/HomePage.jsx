@@ -370,7 +370,7 @@ export function HomePage() {
                 <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                 Estos son algunos de los proyectos en los que he trabajado. Cada uno representa 
                 un desafío único y una oportunidad para aprender y crecer como desarrollador.
-                </p>
+                </p> <br /> <br />
             </div>
 
             {/* Grid de proyectos */}

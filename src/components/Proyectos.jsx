@@ -64,7 +64,7 @@ export function Proyectos ({
             href={sitioUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105"
+            className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-amber-500/90 hover:bg-amber-600 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105"
           >
             <FaExternalLinkAlt />
             Ver sitio
