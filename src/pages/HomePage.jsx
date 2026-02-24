@@ -1,17 +1,19 @@
 import { Skills } from '../components/Skills'
 import { BarNav } from '../components/BarNav';
-import { FaReact, FaHtml5, FaCss3Alt, FaGitAlt, FaDownload } from 'react-icons/fa';
-import { SiJavascript, SiTypescript, SiTailwindcss } from 'react-icons/si';
+import { FaReact, FaHtml5, FaCss3Alt, FaGitAlt, FaDownload, FaFigma } from 'react-icons/fa';
+import { SiJavascript, SiTypescript, SiTailwindcss, SiPostgresql } from 'react-icons/si';
 import { motion } from 'framer-motion';
 
 const habilidades = [
-    {name: "HTML", icon: <FaHtml5 size={40} />, bgColor: "bg-red-700"},
+    {name: "HTML", icon: <FaHtml5 size={40} />, bgColor: "bg-red-600"},
     {name: "CSS", icon: <FaCss3Alt size={40} />, bgColor: "bg-sky-500"},
     {name: "JavaScript", icon: <SiJavascript size={40} />, bgColor: "bg-yellow-300"},
     {name: "TypeScript", icon: <SiTypescript size={40} />, bgColor: "bg-blue-600"},
     {name: "React", icon: <FaReact size={40} />, bgColor: "bg-cyan-500"},
-    {name: "Tailwind", icon: <SiTailwindcss size={40} />, bgColor: "bg-sky-300"},
-    {name: "Git", icon: <FaGitAlt size={40} />, bgColor: "bg-red-800"}
+    {name: "Tailwind", icon: <SiTailwindcss size={40} />, bgColor: "bg-sky-400"},
+    {name: "Git", icon: <FaGitAlt size={40} />, bgColor: "bg-red-800"},
+    {name: "Figma", icon: <FaFigma size={40} />, bgColor: "bg-gradient-to-r from-red-500 via-blue-500 to-green-500"},
+    {name: "PostgreSQL", icon: <SiPostgresql size={40} />, bgColor: "bg-blue-900"},
   ]
 
 export function HomePage() {
@@ -278,12 +280,15 @@ export function HomePage() {
                     Soy <span className="text-amber-300 font-semibold">Alián Torres</span>, 
                     desarrollador frontend apasionado por crear interfaces modernas y funcionales. 
                     Me encanta trabajar con <span className="text-cyan-300">React</span>, 
-                    <span className="text-cyan-300"> TypeScript</span> y 
+                    <span className="text-cyan-300"> JavaScript</span> y 
                     <span className="text-cyan-300"> Tailwind CSS</span>, 
                     construyendo proyectos que combinan simplicidad y elegancia.
                     <br/><br/>
-                    Mi motivación es transformar ideas en experiencias digitales que transmitan 
-                    armonía y usabilidad, siempre buscando aprender y mejorar en cada línea de código.
+                    Mi motivación es transformar ideas en experiencias digitales que despierten emoción y sencillez al navegar,
+                     siempre buscando aprender y mejorar en cada línea de código.
+                    <br/><br/>
+                    He trabajado en un sistema evaluativo de consultas médicas, donde los doctores pueden evaluar las consultas que hacen los estudiantes
+                    a los pacientes. He trabajado en un DICOM de OHIF, haciendo que los visores de imágenes funcionen correctamente.
                     </p>
                 </div>
             </div>
@@ -295,27 +300,32 @@ export function HomePage() {
         {/*Seccion de Habilidades*/}
 
         {/* Sección Skills */}
-<section
-  id="skills"
-  className="min-h-screen flex flex-col items-center justify-center gap-12 px-6 py-16 bg-gradient-to-br from-yellow-500/80 via-orange-600/70 to-red-600/80"
->
-  {/* Título */}
-  <h2 className="text-3xl md:text-4xl font-bold text-yellow-200 mb-6 text-center drop-shadow-lg">
-    Mis Habilidades
-  </h2>
+        <section className="py-20 px-4 bg-gray-50 dark:bg-gray-900">
+            <div className="max-w-6xl mx-auto">
+                {/* Encabezado de la sección */}
+                <div className="text-center mb-16">
+                <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                    Habilidades & Herramientas
+                </h2>
+                <div className="w-24 h-1 bg-gradient-to-r from-amber-600/80 via-orange-500/70 to-rose-600/80 mx-auto mb-6"></div>
+                <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    Tecnologías y herramientas que utilizo para crear experiencias digitales excepcionales.
+                </p>
+                </div>
 
-  {/* Grid de Skills */}
-  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 w-full max-w-5xl">
-    {habilidades.map((habilidad, index) => (
-      <Skills
-        key={index}
-        name={habilidad.name}
-        icon={habilidad.icon}
-        bgColor={habilidad.bgColor}
-      />
-    ))}
-  </div>
-</section>
+                {/* Grid de habilidades */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 justify-items-center">
+                {habilidades.map((skill, index) => (
+                    <Skills
+                    key={index}
+                    icon={skill.icon}
+                    name={skill.name}
+                    bgColor={skill.bgColor}
+                    />
+                ))}
+                </div>
+            </div>
+            </section>
 
         
 
