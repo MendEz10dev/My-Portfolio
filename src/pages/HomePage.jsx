@@ -1,4 +1,5 @@
 import { Skills } from '../components/Skills'
+import { Proyectos } from '../components/Proyectos';
 import { BarNav } from '../components/BarNav';
 import { FaReact, FaHtml5, FaCss3Alt, FaGitAlt, FaDownload, FaFigma } from 'react-icons/fa';
 import { SiJavascript, SiTypescript, SiTailwindcss, SiPostgresql } from 'react-icons/si';
@@ -15,6 +16,31 @@ const habilidades = [
     {name: "Figma", icon: <FaFigma size={40} />, bgColor: "bg-gradient-to-r from-red-500 via-blue-500 to-green-500"},
     {name: "PostgreSQL", icon: <SiPostgresql size={40} />, bgColor: "bg-blue-900"},
   ]
+
+const proyectosData = [
+    {
+      nombre: "E-commerce Platform",
+      descripcion: "Plataforma de ventas online con carrito y pasarela de pago.",
+      tecnologias: ["React", "Redux", "Tailwind"],
+      githubUrl: "https://github.com/tuusuario/ecommerce",
+      sitioUrl: "https://ecommerce-demo.com"
+    },
+    {
+      nombre: "Task Manager",
+      descripcion: "Aplicación para gestionar tareas con drag & drop.",
+      tecnologias: ["Next.js", "TypeScript", "Prisma"],
+      githubUrl: "https://github.com/tuusuario/taskmanager",
+      sitioUrl: "https://tasks-demo.com"
+    },
+    {
+      nombre: "Weather App",
+      descripcion: "App del clima con pronóstico por horas y mapa interactivo.",
+      tecnologias: ["React", "OpenWeather API", "Tailwind"],
+      githubUrl: "https://github.com/tuusuario/weather",
+      sitioUrl: "https://weather-demo.com"
+    }
+  ];
+
 
 export function HomePage() {
 
@@ -152,6 +178,8 @@ export function HomePage() {
         </section>
 
 
+
+
         {/* Sección Acerca de mí */}
         <section 
             id="acerca-de-mi" 
@@ -273,7 +301,7 @@ export function HomePage() {
             {/* Texto de presentación */}
             <div className="flex-1 flex justify-center">
                 <div className="text-center max-w-2xl">
-                    <h2 className="text-3xl md:text-4xl font-bold text-amber-300 mb-6">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
                     Acerca de mí
                     </h2>
                     <p className="text-lg md:text-xl text-slate-100 leading-relaxed bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-lg border border-white/20 hover:shadow-2xl transition-all duration-500">
@@ -294,6 +322,7 @@ export function HomePage() {
             </div>
 
         </section>
+
 
 
 
@@ -331,7 +360,33 @@ export function HomePage() {
 
 
         {/*Seccion de Proyectos */}
+        <section className="py-12 px-6 bg-gray-50 dark:bg-gray-900">
+            {/* Encabezado de la sección */}
+            <div className="text-center mb-10">
+                <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
+                Mis <span className="bg-amber-300 bg-clip-text text-transparent">Proyectos</span>
+                </h2>
+                <div className="w-24 h-1 bg-gradient-to-r from-amber-600/80 via-orange-500/70 to-rose-600/80 mx-auto rounded-full mb-6"></div>
+                <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                Estos son algunos de los proyectos en los que he trabajado. Cada uno representa 
+                un desafío único y una oportunidad para aprender y crecer como desarrollador.
+                </p>
+            </div>
 
+            {/* Grid de proyectos */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {proyectosData.map((proyecto, index) => (
+                <Proyectos 
+                    key={index}
+                    nombre={proyecto.nombre}
+                    descripcion={proyecto.descripcion}
+                    tecnologias={proyecto.tecnologias}
+                    githubUrl={proyecto.githubUrl}
+                    sitioUrl={proyecto.sitioUrl}
+                />
+                ))}
+            </div>
+        </section>     
 
         {/*Seccion de Contacto */}
 
