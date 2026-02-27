@@ -1,8 +1,9 @@
 import { Skills } from '../components/Skills'
 import { Proyectos } from '../components/Proyectos';
 import { BarNav } from '../components/BarNav';
-import { FaReact, FaHtml5, FaCss3Alt, FaGitAlt, FaDownload, FaFigma } from 'react-icons/fa';
-import { SiJavascript, SiTypescript, SiTailwindcss, SiPostgresql } from 'react-icons/si';
+import { FaReact, FaHtml5, FaCss3Alt, FaGitAlt, FaDownload, FaFigma, FaInstagram } from 'react-icons/fa';
+import { SiJavascript, SiTypescript, SiTailwindcss, SiPostgresql, SiGmail } from 'react-icons/si';
+import { FaEnvelope, FaUser, FaComment, FaPaperPlane, FaGithub, FaLinkedin, FaTwitter, FaLock } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const habilidades = [
@@ -72,15 +73,20 @@ export function HomePage() {
             
             <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10 mt-4">
                 
-                {/* Texto */}
-                <div className="flex-1 text-center lg:text-left">
-                    <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white drop-shadow-lg">
-                        Hola, soy <span className="text-amber-200">Alián</span>
-                    </h1>
-                    
-                    <h2 className="text-2xl md:text-3xl text-cyan-100 mb-6 font-light italic">
-                        Desarrollador FrontEnd
-                    </h2>
+                {/* Texto */} <div className="flex-1 text-center lg:text-left"> 
+                    <motion.h1 className="text-4xl md:text-6xl font-bold mb-4 text-white drop-shadow-lg" 
+                        initial={{ opacity: 0, y: -30 }} 
+                        animate={{ opacity: 1, y: 0 }} 
+                        transition={{ duration: 0.8, delay: 0.2 }} > 
+                    Hola, soy <span className="text-amber-200">Alián</span> 
+                    </motion.h1> 
+
+                    <motion.h2 className="text-2xl md:text-3xl text-cyan-100 mb-6 font-light italic" 
+                        initial={{ opacity: 0, y: 20 }} 
+                        animate={{ opacity: 1, y: 0 }} 
+                        transition={{ duration: 0.8, delay: 0.4 }} > 
+                    Desarrollador FrontEnd 
+                    </motion.h2>
                     
                     <p className="text-lg md:text-xl text-slate-100 mb-8 max-w-2xl leading-relaxed backdrop-blur-sm bg-white/5 rounded-lg p-4">
                         Creo experiencias digitales que transmiten paz y armonía. 
@@ -183,7 +189,7 @@ export function HomePage() {
         {/* Sección Acerca de mí */}
         <section 
             id="acerca-de-mi" 
-            className="min-h-screen flex flex-col lg:flex-row items-center justify-center gap-12 px-6 py-16 bg-gradient-to-r from-amber-600/80 via-orange-500/70 to-rose-600/80"
+            className="min-h-screen flex flex-col lg:flex-row items-center justify-center gap-12 px-6 py-16 bg-gradient-to-br from-yellow-600 to-orange-700"
         >
             {/* Foto en círculo */}
             <div className="flex-1 flex justify-center">
@@ -301,23 +307,34 @@ export function HomePage() {
             {/* Texto de presentación */}
             <div className="flex-1 flex justify-center">
                 <div className="text-center max-w-2xl">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-                    Acerca de mí
-                    </h2>
-                    <p className="text-lg md:text-xl text-slate-100 leading-relaxed bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-lg border border-white/20 hover:shadow-2xl transition-all duration-500">
-                    Soy <span className="text-amber-300 font-semibold">Alián Torres</span>, 
-                    desarrollador frontend apasionado por crear interfaces modernas y funcionales. 
-                    Me encanta trabajar con <span className="text-cyan-300">React</span>, 
-                    <span className="text-cyan-300"> JavaScript</span> y 
-                    <span className="text-cyan-300"> Tailwind CSS</span>, 
-                    construyendo proyectos que combinan simplicidad y elegancia.
-                    <br/><br/>
-                    Mi motivación es transformar ideas en experiencias digitales que despierten emoción y sencillez al navegar,
-                     siempre buscando aprender y mejorar en cada línea de código.
-                    <br/><br/>
-                    He trabajado en un sistema evaluativo de consultas médicas, donde los doctores pueden evaluar las consultas que hacen los estudiantes
-                    a los pacientes. He trabajado en un DICOM de OHIF, haciendo que los visores de imágenes funcionen correctamente.
-                    </p>
+                    <motion.h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6" 
+                        initial={{ opacity: 0, y: -30 }} 
+                        whileInView={{ opacity: 1, y: 0 }} 
+                        transition={{ duration: 0.8 }} 
+                        viewport={{ once: true }} >
+                            Acerca de mí
+                    </motion.h2>
+
+                    <motion.p
+                        className="text-lg md:text-xl text-slate-100 leading-relaxed bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-lg border border-white/20 hover:shadow-2xl transition-all duration-500"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        viewport={{ once: true }} >
+
+                        Soy <span className="text-amber-300 font-semibold">Alián Torres</span>, 
+                        desarrollador frontend apasionado por crear interfaces modernas y funcionales. 
+                        Me encanta trabajar con <span className="text-cyan-300">React</span>, 
+                        <span className="text-cyan-300"> JavaScript</span> y 
+                        <span className="text-cyan-300"> Tailwind CSS</span>, 
+                        construyendo proyectos que combinan simplicidad y elegancia.
+                        <br/><br/>
+                        Mi motivación es transformar ideas en experiencias digitales que despierten emoción y sencillez al navegar,
+                        siempre buscando aprender y mejorar en cada línea de código.
+                        <br/><br/>
+                        He trabajado en un sistema evaluativo de consultas médicas, donde los doctores pueden evaluar las consultas que hacen los estudiantes
+                        a los pacientes. He trabajado en un DICOM de OHIF, haciendo que los visores de imágenes funcionen correctamente.
+                    </motion.p>
                 </div>
             </div>
 
@@ -329,66 +346,298 @@ export function HomePage() {
         {/*Seccion de Habilidades*/}
 
         {/* Sección Skills */}
-        <section className="py-20 px-4 bg-gray-50 dark:bg-gray-900">
+        <section 
+        id="habilidades" 
+        className="py-20 px-4 bg-gray-50 dark:bg-gray-900">
             <div className="max-w-6xl mx-auto">
                 {/* Encabezado de la sección */}
-                <div className="text-center mb-16">
-                <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                    Habilidades & Herramientas
-                </h2>
-                <div className="w-24 h-1 bg-gradient-to-r from-amber-600/80 via-orange-500/70 to-rose-600/80 mx-auto mb-6"></div>
-                <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                    Tecnologías y herramientas que utilizo para crear experiencias digitales excepcionales.
-                </p>
-                </div>
+                <motion.div 
+                    initial={{ opacity: 0, y: -30 }} 
+                    whileInView={{ opacity: 1, y: 0 }} 
+                    transition={{ duration: 0.8 }} 
+                    viewport={{ once: true }} 
+                    className="text-center mb-16" >
+                    <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                        Habilidades & Herramientas
+                    </h2>
+                    <div className="w-24 h-1 bg-gradient-to-r from-amber-600/80 via-orange-500/70 to-rose-600/80 mx-auto mb-6"></div>
+                    <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                        Tecnologías y herramientas que utilizo para crear experiencias digitales excepcionales.
+                    </p>
+                </motion.div>
+
 
                 {/* Grid de habilidades */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 justify-items-center">
+                <motion.div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 justify-items-center" 
+                initial="hidden" 
+                whileInView="visible" 
+                viewport={{ once: true }} 
+                    variants={{ hidden: {}, visible: { 
+                        transition: { 
+                            staggerChildren: 0.15, // efecto cascada 
+                        }, 
+                    }, 
+                    }}
+                >
                 {habilidades.map((skill, index) => (
-                    <Skills
-                    key={index}
-                    icon={skill.icon}
-                    name={skill.name}
-                    bgColor={skill.bgColor}
-                    />
+                    <motion.div 
+                        key={index} 
+                        variants={{ hidden: { opacity: 0, scale: 0.8, y: 20 }, 
+                            visible: { opacity: 1, scale: 1, y: 0 },   
+                        }} 
+                        transition={{ duration: 0.6 }} 
+                        whileHover={{ scale: 1.1, rotate: 3 }} 
+                        className="w-full flex justify-center" >
+                            <Skills 
+                            icon={skill.icon} 
+                            name={skill.name} 
+                            bgColor={skill.bgColor} />
+                    </motion.div>
                 ))}
-                </div>
+                </motion.div>
             </div>
-            </section>
+        </section>
 
         
 
 
         {/*Seccion de Proyectos */}
-        <section className="py-12 px-6 bg-gray-50 dark:bg-gray-900">
+        <section 
+        id="proyectos" 
+        className="py-12 px-6 bg-gray-50 dark:bg-gray-900">
             {/* Encabezado de la sección */}
-            <div className="text-center mb-10">
-                <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
-                Mis <span className="bg-amber-300 bg-clip-text text-transparent">Proyectos</span>
-                </h2>
-                <div className="w-24 h-1 bg-gradient-to-r from-amber-600/80 via-orange-500/70 to-rose-600/80 mx-auto rounded-full mb-6"></div>
-                <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Estos son algunos de los proyectos en los que he trabajado. Cada uno representa 
-                un desafío único y una oportunidad para aprender y crecer como desarrollador.
-                </p> <br /> <br />
-            </div>
+            <motion.div 
+                    initial={{ opacity: 0, y: -30 }} 
+                    whileInView={{ opacity: 1, y: 0 }} 
+                    transition={{ duration: 0.8 }} 
+                    viewport={{ once: true }} 
+                    className="text-center mb-16" >
+                    <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
+                        Mis <span className="bg-amber-300 bg-clip-text text-transparent">Proyectos</span>
+                    </h2>
+                    <div className="w-24 h-1 bg-gradient-to-r from-amber-600/80 via-orange-500/70 to-rose-600/80 mx-auto rounded-full mb-6"></div>
+                    <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    Estos son algunos de los proyectos en los que he trabajado. Cada uno representa 
+                    un desafío único y una oportunidad para aprender y crecer como desarrollador.
+                    </p> <br /> <br />
+            </motion.div>
 
             {/* Grid de proyectos */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {proyectosData.map((proyecto, index) => (
-                <Proyectos 
-                    key={index}
-                    nombre={proyecto.nombre}
-                    descripcion={proyecto.descripcion}
-                    tecnologias={proyecto.tecnologias}
-                    githubUrl={proyecto.githubUrl}
-                    sitioUrl={proyecto.sitioUrl}
-                />
-                ))}
-            </div>
+            <motion.div 
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" 
+                initial="hidden" 
+                whileInView="visible" 
+                viewport={{ once: true }} 
+                variants={{ hidden: {}, 
+                    visible: { transition: { staggerChildren: 0.2 }, // efecto cascada 
+                    }, }} >
+                    {proyectosData.map((proyecto, index) => (
+                        <motion.div 
+                        key={index} 
+                        variants={{ 
+                            hidden: { opacity: 0, scale: 0.9, y: 20 }, 
+                            visible: { opacity: 1, scale: 1, y: 0 }, 
+                                }} 
+                                transition={{ duration: 0.6 }} 
+                                whileHover={{ scale: 1}} 
+                                className="w-full" >
+                                    
+                            <Proyectos 
+                            nombre={proyecto.nombre} 
+                            descripcion={proyecto.descripcion} 
+                            tecnologias={proyecto.tecnologias} 
+                            githubUrl={proyecto.githubUrl} 
+                            sitioUrl={proyecto.sitioUrl} />
+                        </motion.div>
+                    ))}
+            </motion.div>
         </section>     
 
+
+
+
         {/*Seccion de Contacto */}
+        {/* Sección Contacto */}
+        <section 
+            id="contacto" 
+            className="min-h-screen flex items-center justify-center px-6 py-20 bg-gray-50 dark:bg-gray-900"
+        >
+            <div className="max-w-6xl w-full">
+                {/* Encabezado de la sección */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true }}
+                    className="text-center mb-16"
+                >
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                        Contacto
+                    </h2>
+                    <div className="w-24 h-1 bg-gradient-to-r from-amber-600/80 via-orange-500/70 to-rose-600/80 mx-auto rounded-full mb-6"></div>
+                    <p className="text-slate-300 text-lg max-w-2xl mx-auto">
+                        ¿Tienes un proyecto en mente o quieres colaborar? 
+                        ¡Estoy a un mensaje de distancia!
+                    </p>
+                </motion.div>
+
+                <div className="grid lg:grid-cols-2 gap-12 items-start">
+                    {/* Información de contacto - Lado izquierdo */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        viewport={{ once: true }}
+                        className="space-y-8"
+                    >
+                        {/* Tarjeta de disponibilidad */}
+                        <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10 hover:border-amber-300 transition-all duration-300">
+                            <h3 className="text-2xl font-semibold text-white mb-6 flex items-center gap-3">
+                                <span className="text-3xl">💬</span>
+                                Hablemos de tu proyecto
+                            </h3>
+                            <p className="text-slate-300 leading-relaxed mb-8">
+                                Actualmente estoy disponible para trabajar en proyectos freelance 
+                                o unirme a equipos de desarrollo. Respondo en menos de 24 horas.
+                            </p>
+                            
+                            {/* Badge de disponibilidad */}
+                            <div className="flex items-center gap-3 bg-emerald-500/20 text-emerald-400 px-4 py-3 rounded-lg w-fit">
+                                <span className="relative flex h-3 w-3">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                                </span>
+                                <span className="font-medium">Disponible para trabajar</span>
+                            </div>
+                        </div>
+
+                        {/* Redes sociales y contacto directo */}
+                        <div className="grid grid-cols-2 gap-4">
+                            {[
+                                { icon: <SiGmail size={40} color='#D14836'/>, label: "Email", value: "alian@dev.com", href: "mailto:alian@dev.com", color: "from-[#D14836]/20 to-[#D14836]/40" },
+                                { icon: <FaLinkedin size={40} color='#0A66C2'/>, label: "LinkedIn", value: "linkedin.com/in/alian", href: "#", color: "from-[#0A66C2]/20 to-[#0A66C2]/40" },
+                                { icon: <FaGithub size={40} color='gray'/>, label: "GitHub", value: "@aliantorres", href: "#", color: "from-slate-500/20 to-slate-600/20" },
+                                { icon: <FaInstagram size={40} color='#E4405F'/>, label: "Instagram", value: "10_atm_10", href: "#", color: "from-[#405DE6]/20 via-[#E4405F]/30 to-[#FCAF45]/40" }
+                            ].map((item, index) => (
+                                <motion.a
+                                    key={index}
+                                    href={item.href}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                                    viewport={{ once: true }}
+                                    className={`bg-gradient-to-br ${item.color} backdrop-blur-lg rounded-xl p-5 border border-white/10 hover:border-amber-300 transition-all duration-300 group`}
+                                >
+                                    <div className="text-3xl mb-2">{item.icon}</div>
+                                    <div className="font-medium text-white mb-1">{item.label}</div>
+                                    <div className="text-sm text-slate-300 group-hover:text-white transition-colors truncate">
+                                        {item.value}
+                                    </div>
+                                </motion.a>
+                            ))}
+                        </div>
+
+                        {/* Mapa o ubicación (opcional) */}
+                        <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10">
+                            <div className="flex items-center gap-3 mb-3">
+                                <span className="text-2xl">📍</span>
+                                <span className="text-white font-medium">Basado en</span>
+                            </div>
+                            <p className="text-slate-300">La Habana, Cuba · Disponible para remoto</p>
+                        </div>
+                    </motion.div>
+
+                    {/* Formulario de contacto - Lado derecho */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                        viewport={{ once: true }}
+                        className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10 hover:border-amber-300 transition-all duration-300"
+                    >
+                        <form className="space-y-6">
+                            {/* Campo Nombre */}
+                            <div className="space-y-2">
+                                <label htmlFor="nombre" className="text-sm font-medium text-slate-300 block">
+                                    Nombre completo
+                                </label>
+                                <input
+                                    type="text"
+                                    id="nombre"
+                                    name="nombre"
+                                    placeholder="Ej. Juan Pérez"
+                                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-amber-300 transition-all duration-300"
+                                />
+                            </div>
+
+                            {/* Campo Correo */}
+                            <div className="space-y-2">
+                                <label htmlFor="correo" className="text-sm font-medium text-slate-300 block">
+                                    Correo electrónico
+                                </label>
+                                <input
+                                    type="email"
+                                    id="correo"
+                                    name="correo"
+                                    placeholder="ejemplo@correo.com"
+                                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-amber-300 transition-all duration-300"
+                                />
+                            </div>
+
+                            {/* Campo Descripción */}
+                            <div className="space-y-2">
+                                <label htmlFor="descripcion" className="text-sm font-medium text-slate-300 block">
+                                    ¿En qué puedo ayudarte?
+                                </label>
+                                <textarea
+                                    id="descripcion"
+                                    name="descripcion"
+                                    rows="5"
+                                    placeholder="Cuéntame sobre tu proyecto, idea o colaboración..."
+                                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-amber-300 transition-all duration-300 resize-none"
+                                ></textarea>
+                            </div>
+
+                            {/* Botón de envío */}
+                            <motion.button
+                                type="submit"
+                                className="w-full group relative px-6 py-4 bg-amber-500/90 hover:bg-amber-600 text-white font-semibold rounded-lg overflow-hidden shadow-lg hover:shadow-[0_0_20px_rgba(255,165,0,0.6)] transition-all duration-300"
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
+                            >
+                                <span className="relative z-10 flex items-center justify-center gap-2">
+                                    Enviar mensaje
+                                    <svg 
+                                        className="w-5 h-5 group-hover:translate-x-1 transition-transform" 
+                                        fill="none" 
+                                        stroke="currentColor" 
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                                    </svg>
+                                </span>
+                                <motion.div
+                                    className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-purple-700 opacity-0 transition-opacity duration-300"
+                                    initial={false}
+                                />
+                            </motion.button>
+
+                            {/* Mensaje de privacidad */}
+                            <p className="text-xs text-center text-slate-400 mt-4">
+                                <FaLock className="mr-2 inline-block" />
+                                Tu información está segura. No comparto tus datos con terceros.
+                            </p>
+                        </form>
+                    </motion.div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        {/* Footer */}
+
 
       </>
     )
