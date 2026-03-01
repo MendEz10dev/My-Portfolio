@@ -5,6 +5,7 @@ import { FaReact, FaHtml5, FaCss3Alt, FaGitAlt, FaDownload, FaFigma, FaInstagram
 import { SiJavascript, SiTypescript, SiTailwindcss, SiPostgresql, SiGmail } from 'react-icons/si';
 import { FaEnvelope, FaUser, FaComment, FaPaperPlane, FaGithub, FaLinkedin, FaTwitter, FaLock } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { image } from 'framer-motion/client';
 
 const habilidades = [
     {name: "HTML", icon: <FaHtml5 size={40} />, bgColor: "bg-red-600"},
@@ -20,17 +21,18 @@ const habilidades = [
 
 const proyectosData = [
     {
-      nombre: "E-commerce Platform",
-      descripcion: "Plataforma de ventas online con carrito y pasarela de pago.",
-      tecnologias: ["React", "Redux", "Tailwind"],
-      githubUrl: "https://github.com/tuusuario/ecommerce",
-      sitioUrl: "https://ecommerce-demo.com"
+      nombre: "Mi Portafolio Personal",
+      descripcion: "Página para mostrar quien soy y mis habilidades en el desarrollo web.",
+      tecnologias: ["React", "JavaScript", "Tailwind"],
+      githubUrl: "https://github.com/MendEz10dev/My-Portfolio.git",
+      sitioUrl: "https://ecommerce-demo.com",
+      imagen: "src/assets/Portafolio de Alian.png"
     },
     {
-      nombre: "Task Manager",
-      descripcion: "Aplicación para gestionar tareas con drag & drop.",
-      tecnologias: ["Next.js", "TypeScript", "Prisma"],
-      githubUrl: "https://github.com/tuusuario/taskmanager",
+      nombre: "MedHistory",
+      descripcion: "Sistema Evaluativo para realización de consultas médicas.",
+      tecnologias: ["React", "TypeScript", "JavaScript", "Tailwind"],
+      githubUrl: "https://github.com/RudyDanielPro/MedHistory.git",
       sitioUrl: "https://tasks-demo.com"
     },
     {
@@ -448,7 +450,8 @@ export function HomePage() {
                             descripcion={proyecto.descripcion} 
                             tecnologias={proyecto.tecnologias} 
                             githubUrl={proyecto.githubUrl} 
-                            sitioUrl={proyecto.sitioUrl} />
+                            sitioUrl={proyecto.sitioUrl}
+                            imagen={proyecto.imagen} />
                         </motion.div>
                     ))}
             </motion.div>
@@ -604,7 +607,7 @@ export function HomePage() {
                             {/* Botón de envío */}
                             <motion.button
                                 type="submit"
-                                className="w-full group relative px-6 py-4 bg-amber-500/90 hover:bg-amber-600 text-white font-semibold rounded-lg overflow-hidden shadow-lg hover:shadow-[0_0_20px_rgba(255,165,0,0.6)] transition-all duration-300"
+                                className="w-full group relative px-6 py-4 bg-amber-500/90 hover:bg-amber-600 text-white font-semibold rounded-lg overflow-hidden shadow-lg hover:shadow-[0_0_20px_rgba(255,165,0,0.6)] transition-all duration-300 cursor-pointer"
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                             >
