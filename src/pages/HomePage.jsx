@@ -96,6 +96,7 @@ export function HomePage() {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                         <a 
                             href="#proyectos" 
+                            onClick={(e) => { e.preventDefault(); document.querySelector("#proyectos")?.scrollIntoView({ behavior: "smooth" }); }}
                             className="bg-amber-500/90 hover:bg-amber-600 text-slate-900 px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-amber-500/25 flex items-center justify-center gap-2"
                         >
                             Explorar Proyectos
@@ -514,14 +515,15 @@ export function HomePage() {
                         {/* Redes sociales y contacto directo */}
                         <div className="grid grid-cols-2 gap-4">
                             {[
-                                { icon: <SiGmail size={40} color='#D14836'/>, label: "Email", value: "alian@dev.com", href: "mailto:alian@dev.com", color: "from-[#D14836]/20 to-[#D14836]/40" },
-                                { icon: <FaLinkedin size={40} color='#0A66C2'/>, label: "LinkedIn", value: "linkedin.com/in/alian", href: "#", color: "from-[#0A66C2]/20 to-[#0A66C2]/40" },
-                                { icon: <FaGithub size={40} color='gray'/>, label: "GitHub", value: "@aliantorres", href: "#", color: "from-slate-500/20 to-slate-600/20" },
-                                { icon: <FaInstagram size={40} color='#E4405F'/>, label: "Instagram", value: "10_atm_10", href: "#", color: "from-[#405DE6]/20 via-[#E4405F]/30 to-[#FCAF45]/40" }
+                                { icon: <SiGmail size={40} color='#D14836'/>, label: "Gmail", value: "mendez10dev@gmail.com", href: "mailto:mendez10dev@gmail.com", color: "from-[#D14836]/20 to-[#D14836]/40" }, //mailto: abre el programa de correo predeterminado del usuario (Outlook, Gmail web, Apple Mail, etc.).
+                                { icon: <FaLinkedin size={40} color='#0A66C2'/>, label: "LinkedIn", value: "Alián Torres Méndez", href: "https://www.linkedin.com/in/alián-torres-méndez-554924356", color: "from-[#0A66C2]/20 to-[#0A66C2]/40" },
+                                { icon: <FaGithub size={40} color='gray'/>, label: "GitHub", value: "@MendEz10dev", href: "https://github.com/MendEz10dev", color: "from-slate-500/20 to-slate-600/20" },
+                                { icon: <FaInstagram size={40} color='#E4405F'/>, label: "Instagram", value: "@10_atm_10", href: "https://www.instagram.com/10_atm_10", color: "from-[#405DE6]/20 via-[#E4405F]/30 to-[#FCAF45]/40" }
                             ].map((item, index) => (
                                 <motion.a
                                     key={index}
                                     href={item.href}
+                                    target="_blank" rel="noopener noreferrer"
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
@@ -548,6 +550,7 @@ export function HomePage() {
                     </motion.div>
 
                     {/* Formulario de contacto - Lado derecho */}
+                    <div className="flex flex-col gap-6">
                     <motion.div
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -629,6 +632,13 @@ export function HomePage() {
                             </p>
                         </form>
                     </motion.div>
+
+                    {/* Aviso de derechos reservados en la columna derecha */} 
+                    <div className="lg:col-start-2 text-center mt-14"> 
+                        <p className="text-sm text-slate-500"> © {new Date().getFullYear()} Alián Torres. Todos los derechos reservados. 
+                        </p>
+                    </div>
+                </div>
                 </div>
             </div>
         </section>

@@ -8,10 +8,10 @@ export function BarNav() {
 
   const navItems = [
     { name: 'Inicio', href: '#inicio' },
-    { name: 'Sobre mí', href: '#about' },
-    { name: 'Habilidades', href: '#skills' },
-    { name: 'Proyectos', href: '#projects' },
-    { name: 'Contacto', href: '#contact' },
+    { name: 'Sobre mí', href: '#acerca-de-mi' },
+    { name: 'Habilidades', href: '#habilidades' },
+    { name: 'Proyectos', href: '#proyectos' },
+    { name: 'Contacto', href: '#contacto' },
   ];
 
   // Efecto para detectar scroll y cambiar el estilo de la barra
