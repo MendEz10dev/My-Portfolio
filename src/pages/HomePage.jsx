@@ -3,9 +3,11 @@ import { Proyectos } from '../components/Proyectos';
 import { BarNav } from '../components/BarNav';
 import { FaReact, FaHtml5, FaCss3Alt, FaGitAlt, FaDownload, FaFigma, FaInstagram } from 'react-icons/fa';
 import { SiJavascript, SiTypescript, SiTailwindcss, SiPostgresql, SiGmail } from 'react-icons/si';
-import { FaEnvelope, FaUser, FaComment, FaPaperPlane, FaGithub, FaLinkedin, FaTwitter, FaLock } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaLock } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import { image } from 'framer-motion/client';
+import emailjs from "@emailjs/browser";
+import { useRef, useState } from "react";
+
 
 const habilidades = [
     {name: "HTML", icon: <FaHtml5 size={40} />, bgColor: "bg-red-600"},
@@ -54,6 +56,21 @@ export function HomePage() {
         link.download = 'CV-Alián-Torres-Méndez-DesarrolladorFrontend.pdf';
         link.click();
     };
+
+
+    const form = useRef();
+    const [statusMessage, setStatusMessage] = useState(null); // estado para el mensaje 
+    const [statusType, setStatusType] = useState(null); // "success" o "error" 
+
+    const sendEmail = (e) => { e.preventDefault(); 
+        emailjs.sendForm( "service_cqzdxsl", // lo copias de EmailJS 
+                        "template_l2qwgmk", // lo copias de EmailJS 
+    form.current, "NqtxVwFcsXKocc7N2" // tu clave pública 
+    ).then( (result) => { setStatusMessage("Mensaje enviado correctamente ✅"); 
+                        setStatusType("success"); 
+                        form.current.reset(); // limpia el formulario
+    }, 
+            (error) => { setStatusMessage("Hubo un error ❌. Intenta de nuevo."); setStatusType("error");} ); };
 
 
     return (
@@ -226,7 +243,7 @@ export function HomePage() {
                             flex items-center justify-center text-slate-100 text-sm font-semibold
                             cursor-pointer"
                 whileHover={{ scale: 1.2, rotate: 10, backgroundColor: "rgba(255,255,255,0.2)" }}
-                whileTap={{ scale: 0.9, rotate: -10, backgroundColor: "rgba(255,255,255,0.3)" }}
+                whileTap={{ scale: 0.9, rotate: 10, backgroundColor: "rgba(255,255,255,0.3)" }}
                 >
                 Creatividad
                 {/* Tooltip */} 
@@ -237,7 +254,9 @@ export function HomePage() {
 
             {/* Círculo de Resolución */}
             <motion.div
-                className="group z-10 absolute -bottom-10 left-55 w-20 h-20 rounded-full 
+                className="group z-10 absolute 
+                            -bottom-6 left-20 sm:-bottom-10 sm:left-38 md:-bottom-10 md:left-55
+                            w-20 h-20 rounded-full 
                             bg-white/10 backdrop-blur-md border border-white/30 shadow-lg 
                             flex items-center justify-center text-slate-100 text-sm font-semibold
                             cursor-pointer"
@@ -245,15 +264,16 @@ export function HomePage() {
                 whileTap={{ scale: 0.9, rotate: 10, backgroundColor: "rgba(255,255,255,0.3)" }}
                 >
                 Resolución
-                {/* Tooltip */} 
-                <div className="absolute bottom-full mb-2 px-3 py-1 rounded-lg bg-black/70 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" > 
-                    Habilidad para superar obstáculos con eficacia. 
+                <div className="absolute bottom-full mb-2 px-3 py-1 rounded-lg bg-black/70 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Habilidad para superar obstáculos con eficacia.
                 </div>
-            </motion.div>
+            </motion.div>   
 
             {/* Círculo de Disciplina */}
             <motion.div
-                className="group z-10 absolute -top-10 right-55 w-20 h-20 rounded-full 
+                className="group z-10 absolute 
+                            -top-6 right-20 sm:-top-10 sm:right-38 md:-top-10 md:right-55
+                            w-20 h-20 rounded-full 
                             bg-white/10 backdrop-blur-md border border-white/30 shadow-lg 
                             flex items-center justify-center text-slate-100 text-sm font-semibold
                             cursor-pointer"
@@ -261,11 +281,11 @@ export function HomePage() {
                 whileTap={{ scale: 0.9, rotate: -15, backgroundColor: "rgba(255,255,255,0.3)" }}
                 >
                 Disciplina
-                {/* Tooltip */} 
-                <div className="absolute bottom-full mb-2 px-3 py-1 rounded-lg bg-black/70 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" > 
-                    Constancia y compromiso para alcanzar metas. 
+                <div className="absolute bottom-full mb-2 px-3 py-1 rounded-lg bg-black/70 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Constancia y compromiso para alcanzar metas.
                 </div>
             </motion.div>
+
 
             {/* Círculo de Respeto */}
             <motion.div
@@ -274,7 +294,7 @@ export function HomePage() {
                             flex items-center justify-center text-slate-100 text-sm font-semibold
                             cursor-pointer"
                 whileHover={{ scale: 1.2, rotate: -15, backgroundColor: "rgba(255,255,255,0.2)" }}
-                whileTap={{ scale: 0.9, rotate: 15, backgroundColor: "rgba(255,255,255,0.3)" }}
+                whileTap={{ scale: 0.9, rotate: -15, backgroundColor: "rgba(255,255,255,0.3)" }}
                 >
                 Respeto
                 {/* Tooltip */} 
@@ -288,14 +308,14 @@ export function HomePage() {
                     -top-5 right-19  
                     transform rotate-45 origin-bottom"></div>
 
-                {/* Línea hacia Resolución */}
+                {/* Línea hacia Resolución */} 
                 <div className="absolute w-0.5 h-28 bg-white/40 
-                    -bottom-5 left-43 
+                    -bottom-5 left-20 sm:left-25 md:left-43 
                     transform -rotate-45 origin-top"></div>
 
-                {/* Línea hacia Disciplina */}
+                {/* Línea hacia Disciplina */} 
                 <div className="absolute w-0.5 h-28 bg-white/40 
-                    -top-5 right-43 
+                    -top-5 right-20 sm:right-25 md:right-43 
                     transform -rotate-45 origin-bottom"></div>
 
                 {/* Línea hacia Respeto */}
@@ -561,7 +581,7 @@ export function HomePage() {
                         viewport={{ once: true }}
                         className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10 hover:border-amber-300 transition-all duration-300"
                     >
-                        <form className="space-y-6">
+                        <form ref={form} onSubmit={sendEmail} className="space-y-6">
                             {/* Campo Nombre */}
                             <div className="space-y-2">
                                 <label htmlFor="nombre" className="text-sm font-medium text-slate-300 block">
@@ -627,6 +647,13 @@ export function HomePage() {
                                     initial={false}
                                 />
                             </motion.button>
+
+                            {/* Mensaje bonito */}
+                            {statusMessage && (
+                                <div className={`mt-4 p-3 rounded-lg text-center font-medium ${ statusType === "success" ? "bg-emerald-500/20 text-emerald-400 border border-emerald-400" : "bg-red-500/20 text-red-400 border border-red-400" }`} >
+                                {statusMessage}
+                                </div>
+                            )}
 
                             {/* Mensaje de privacidad */}
                             <p className="text-xs text-center text-slate-400 mt-4">
