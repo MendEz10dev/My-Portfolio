@@ -42,7 +42,7 @@ const proyectosData = [
       nombre: "Sabores que Inspiran",
       descripcion: "Web sobre un restaurante.",
       tecnologias: ["Stack de T3"],
-      githubUrl: "https://github.com/tuusuario/weather",
+      githubUrl: "https://github.com/MendEz10dev/restaurant-app.git",
       sitioUrl: "https://weather-demo.com",
       imagen: "src/assets/restaurant.png"
     }
