@@ -2,7 +2,7 @@ import { Skills } from '../components/Skills'
 import { Proyectos } from '../components/Proyectos';
 import { BarNav } from '../components/BarNav';
 import { FaReact, FaHtml5, FaCss3Alt, FaGitAlt, FaDownload, FaFigma, FaInstagram } from 'react-icons/fa';
-import { SiJavascript, SiTypescript, SiTailwindcss, SiPostgresql, SiGmail } from 'react-icons/si';
+import { SiJavascript, SiTypescript, SiTailwindcss, SiPostgresql, SiGmail, SiPython } from 'react-icons/si';
 import { FaGithub, FaLinkedin, FaLock } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import emailjs from "@emailjs/browser";
@@ -17,8 +17,8 @@ const habilidades = [
     {name: "React", icon: <FaReact size={40} />, bgColor: "bg-cyan-500"},
     {name: "Tailwind", icon: <SiTailwindcss size={40} />, bgColor: "bg-sky-400"},
     {name: "Git", icon: <FaGitAlt size={40} />, bgColor: "bg-red-800"},
-    {name: "Figma", icon: <FaFigma size={40} />, bgColor: "bg-gradient-to-r from-red-500 via-blue-500 to-green-500"},
     {name: "PostgreSQL", icon: <SiPostgresql size={40} />, bgColor: "bg-blue-900"},
+    {name: "Python", icon: <SiPython size={40} />, bgColor: "bg-gradient-to-r from-blue-900 via-green-500 to-yellow-500"},
   ]
 
 const proyectosData = [
@@ -35,14 +35,16 @@ const proyectosData = [
       descripcion: "Sistema Evaluativo para realización de consultas médicas.",
       tecnologias: ["React", "TypeScript", "JavaScript", "Tailwind"],
       githubUrl: "https://github.com/RudyDanielPro/MedHistory.git",
-      sitioUrl: "https://tasks-demo.com"
+      sitioUrl: "https://tasks-demo.com",
+      imagen: "src/assets/medhistory.png"
     },
     {
-      nombre: "Weather App",
-      descripcion: "App del clima con pronóstico por horas y mapa interactivo.",
-      tecnologias: ["React", "OpenWeather API", "Tailwind"],
+      nombre: "Sabores que Inspiran",
+      descripcion: "Web sobre un restaurante.",
+      tecnologias: ["Stack de T3"],
       githubUrl: "https://github.com/tuusuario/weather",
-      sitioUrl: "https://weather-demo.com"
+      sitioUrl: "https://weather-demo.com",
+      imagen: "src/assets/restaurant.png"
     }
   ];
 
@@ -52,7 +54,7 @@ export function HomePage() {
    // Función para descargar CV
     const handleDownloadCV = () => {
         const link = document.createElement('a');
-        link.href = 'src/assets/CV Alián Torres Méndez.pdf'; // Ruta a tu archivo CV
+        link.href = 'src/assets/CV Alian Torres Mendez.pdf'; // Ruta a tu archivo CV
         link.download = 'CV-Alián-Torres-Méndez-DesarrolladorFrontend.pdf';
         link.click();
     };
@@ -255,7 +257,7 @@ export function HomePage() {
             {/* Círculo de Resolución */}
             <motion.div
                 className="group z-10 absolute 
-                            -bottom-6 left-20 sm:-bottom-10 sm:left-38 md:-bottom-10 md:left-55
+                            -bottom-10 left-38 sm:-bottom-10 sm:left-38 md:-bottom-10 md:left-55
                             w-20 h-20 rounded-full 
                             bg-white/10 backdrop-blur-md border border-white/30 shadow-lg 
                             flex items-center justify-center text-slate-100 text-sm font-semibold
@@ -272,7 +274,7 @@ export function HomePage() {
             {/* Círculo de Disciplina */}
             <motion.div
                 className="group z-10 absolute 
-                            -top-6 right-20 sm:-top-10 sm:right-38 md:-top-10 md:right-55
+                            -top-10 right-38 sm:-top-10 sm:right-38 md:-top-10 md:right-55
                             w-20 h-20 rounded-full 
                             bg-white/10 backdrop-blur-md border border-white/30 shadow-lg 
                             flex items-center justify-center text-slate-100 text-sm font-semibold
@@ -310,12 +312,12 @@ export function HomePage() {
 
                 {/* Línea hacia Resolución */} 
                 <div className="absolute w-0.5 h-28 bg-white/40 
-                    -bottom-5 left-20 sm:left-25 md:left-43 
+                    -bottom-5 left-25 sm:left-25 md:left-43 
                     transform -rotate-45 origin-top"></div>
 
                 {/* Línea hacia Disciplina */} 
                 <div className="absolute w-0.5 h-28 bg-white/40 
-                    -top-5 right-20 sm:right-25 md:right-43 
+                    -top-5 right-25 sm:right-25 md:right-43 
                     transform -rotate-45 origin-bottom"></div>
 
                 {/* Línea hacia Respeto */}
