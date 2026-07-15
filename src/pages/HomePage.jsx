@@ -1,7 +1,7 @@
 import { Skills } from '../components/Skills'
 import { Proyectos } from '../components/Proyectos';
 import { BarNav } from '../components/BarNav';
-import { FaReact, FaHtml5, FaCss3Alt, FaGitAlt, FaDownload, FaFigma, FaInstagram } from 'react-icons/fa';
+import { FaReact, FaHtml5, FaCss3Alt, FaGitAlt, FaDownload, FaFigma, FaInstagram, FaJava } from 'react-icons/fa';
 import { SiJavascript, SiTypescript, SiTailwindcss, SiPostgresql, SiGmail, SiPython } from 'react-icons/si';
 import { FaGithub, FaLinkedin, FaLock } from 'react-icons/fa';
 import { motion } from 'framer-motion';
@@ -26,7 +26,7 @@ const habilidades = [
     {name: "Tailwind", icon: <SiTailwindcss size={40} />, bgColor: "bg-sky-400"},
     {name: "Git", icon: <FaGitAlt size={40} />, bgColor: "bg-red-800"},
     {name: "PostgreSQL", icon: <SiPostgresql size={40} />, bgColor: "bg-blue-900"},
-    {name: "Python", icon: <SiPython size={40} />, bgColor: "bg-gradient-to-r from-blue-900 via-green-500 to-yellow-500"},
+    {name: "Java", icon: <FaJava size={40} />, bgColor: "bg-orange-500"},
   ]
 
 const proyectosData = [
