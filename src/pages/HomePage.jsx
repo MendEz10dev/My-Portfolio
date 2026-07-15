@@ -8,6 +8,14 @@ import { motion } from 'framer-motion';
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 
+import CVAlianTorresMendez from '../assets/CVAlianTorresMendez.pdf';
+import fondolofi from '../assets/fondolofi.png';
+import fotoAlian from '../assets/fotoAlian.jpg';
+import fotoAlian2 from '../assets/fotoAlian2.jpg';
+import medhistory from '../assets/medhistory.png';
+import PortafoliodeAlian from '../assets/PortafoliodeAlian.png';
+import restaurant from '../assets/restaurant.png';
+
 
 const habilidades = [
     {name: "HTML", icon: <FaHtml5 size={40} />, bgColor: "bg-red-600"},
@@ -28,7 +36,7 @@ const proyectosData = [
       tecnologias: ["React", "JavaScript", "Tailwind"],
       githubUrl: "https://github.com/MendEz10dev/My-Portfolio.git",
       sitioUrl: "https://ecommerce-demo.com",
-      imagen: "src/assets/Portafolio de Alian.png"
+      imagen: PortafoliodeAlian
     },
     {
       nombre: "MedHistory",
@@ -36,7 +44,7 @@ const proyectosData = [
       tecnologias: ["React", "TypeScript", "JavaScript", "Tailwind"],
       githubUrl: "https://github.com/RudyDanielPro/MedHistory.git",
       sitioUrl: "https://tasks-demo.com",
-      imagen: "src/assets/medhistory.png"
+      imagen: medhistory
     },
     {
       nombre: "Sabores que Inspiran",
@@ -44,7 +52,7 @@ const proyectosData = [
       tecnologias: ["Stack de T3"],
       githubUrl: "https://github.com/MendEz10dev/restaurant-app.git",
       sitioUrl: "https://weather-demo.com",
-      imagen: "src/assets/restaurant.png"
+      imagen: restaurant
     }
   ];
 
@@ -54,7 +62,7 @@ export function HomePage() {
    // Función para descargar CV
     const handleDownloadCV = () => {
         const link = document.createElement('a');
-        link.href = 'src/assets/CV Alian Torres Mendez.pdf'; // Ruta a tu archivo CV
+        link.href = CVAlianTorresMendez; // Ruta a tu archivo CV
         link.download = 'CV-Alián-Torres-Méndez-DesarrolladorFrontend.pdf';
         link.click();
     };
@@ -83,7 +91,7 @@ export function HomePage() {
         <section 
             id="inicio" 
             className="min-h-screen flex items-center justify-center relative overflow-hidden bg-cover bg-center bg-no-repeat pt-16 md:pt-20"
-            style={{ backgroundImage: "url('src/assets/fondo lo-fi.png')" }}
+            style={{ backgroundImage: `url(${fondolofi})` }}
         >
             {/* Overlay para mejorar legibilidad - colores derivados de la foto */}
             <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-purple-900/60 to-indigo-900/70 mix-blend-multiply"></div>
@@ -153,7 +161,7 @@ export function HomePage() {
                         {/* Contenedor de la foto con efectos */}
                         <div className="absolute inset-4 flex items-center justify-center overflow-hidden rounded-full">
                             <motion.img
-                                src="src/assets/IMG-20260126-WA0026.jpg" 
+                                src={fotoAlian2}
                                 alt="Alián Torres - Desarrollador Frontend"
                                 className="w-full h-full object-cover rounded-full border-4 border-yellow-300/20 shadow-2xl z-10 hover:scale-105 transition-transform"
                                 whileHover={{ scale: 1.05 }}
@@ -229,7 +237,7 @@ export function HomePage() {
             {/* Imagen principal */}
             <div className="z-20 absolute inset-4 flex items-center justify-center overflow-hidden rounded-full">
                 <motion.img
-                src="src/assets/foto-alian.jpg" 
+                src={fotoAlian} 
                 alt="Alián Torres - Desarrollador Frontend"
                 className="w-full h-full object-cover rounded-full border-4 border-yellow-600/90 shadow-2xl"
                 whileHover={{ scale: 1.05 }}
