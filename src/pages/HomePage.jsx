@@ -9,12 +9,12 @@ import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 
 import CVAlianTorresMendez from '../assets/CVAlianTorresMendez.pdf';
-import fondolofi from '../assets/fondolofi.png';
-import fotoAlian from '../assets/fotoAlian.jpg';
-import fotoAlian2 from '../assets/fotoAlian2.jpg';
-import medhistory from '../assets/medhistory.png';
-import PortafoliodeAlian from '../assets/PortafoliodeAlian.png';
-import restaurant from '../assets/restaurant.png';
+import fondolofi from '../assets/fondolofi.webp';
+import fotoAlian from '../assets/fotoAlian.webp';
+import fotoAlian2 from '../assets/fotoAlian2.webp';
+import medhistory from '../assets/medhistory.webp';
+import PortafoliodeAlian from '../assets/PortafoliodeAlian.webp';
+import restaurant from '../assets/restaurant.webp';
 
 
 const habilidades = [
