@@ -15,6 +15,7 @@ import fotoAlian2 from '../assets/fotoAlian2.webp';
 import medhistory from '../assets/medhistory.webp';
 import PortafoliodeAlian from '../assets/PortafoliodeAlian.webp';
 import restaurant from '../assets/restaurant.webp';
+import garumRestaurant from '../assets/garumRestaurant.webp';
 
 
 const habilidades = [
@@ -53,6 +54,14 @@ const proyectosData = [
       githubUrl: "https://github.com/MendEz10dev/restaurant-app.git",
       sitioUrl: "https://weather-demo.com",
       imagen: restaurant
+    },
+    {
+      nombre: "Garum Restaurant",
+      descripcion: "Web sobre un restaurante.",
+      tecnologias: ["React", "TypeScript", "Tailwind"],
+      githubUrl: "https://github.com/MendEz10dev/Garum-Restaurant",
+      sitioUrl: "https://garum-restaurant.netlify.app/",
+      imagen: garumRestaurant
     }
   ];
 
